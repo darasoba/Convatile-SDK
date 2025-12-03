@@ -8,7 +8,7 @@ const LOG_LEVELS: Record<LogLevel, number> = {
 };
 
 /**
- * Simple logger utility for the Markdown Export SDK
+ * Simple logger utility for the Convatile-SDK
  */
 export class Logger {
   private level: LogLevel;
@@ -16,7 +16,7 @@ export class Logger {
 
   constructor(config: LoggerConfig = { level: 'info' }) {
     this.level = config.level;
-    this.prefix = config.prefix ?? '[markdown-export-sdk]';
+    this.prefix = config.prefix ?? '[convatile-sdk]';
   }
 
   private shouldLog(level: LogLevel): boolean {

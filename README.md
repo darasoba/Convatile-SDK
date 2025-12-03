@@ -1,4 +1,4 @@
-# Markdown Export SDK
+# Convatile-SDK
 
 A template-driven document export engine that converts plain text into Markdown, PDF, DOCX, and HTML formats.
 
@@ -14,7 +14,7 @@ A template-driven document export engine that converts plain text into Markdown,
 ## Installation
 
 ```bash
-npm install markdown-export-sdk
+npm install convatile-sdk
 ```
 
 ## Quick Start
@@ -22,7 +22,7 @@ npm install markdown-export-sdk
 ### Programmatic API
 
 ```typescript
-import { convert } from 'markdown-export-sdk';
+import { convert } from 'convatile-sdk';
 
 const text = `
 # My Document
@@ -56,16 +56,16 @@ console.log(result.html);  // string
 
 ```bash
 # Convert a file to PDF and DOCX
-mdexport convert document.md -f pdf,docx -o output/
+convatile convert document.md -f pdf,docx -o output/
 
 # Convert text directly
-mdexport convert "# Hello World" -f html
+convatile convert "# Hello World" -f html
 
 # Convert with metadata
-mdexport convert input.txt -f pdf --title "My Report" --author "John Doe"
+convatile convert input.txt -f pdf --title "My Report" --author "John Doe"
 
 # Read from stdin
-cat document.md | mdexport convert --stdin -f pdf -o output/
+cat document.md | convatile convert --stdin -f pdf -o output/
 ```
 
 ## API Reference
@@ -106,7 +106,7 @@ const docx = await convertToDocx(text, options);
 ### Template Registration
 
 ```typescript
-import { registerTemplate } from 'markdown-export-sdk';
+import { registerTemplate } from 'convatile-sdk';
 
 await registerTemplate({
   id: 'my-template',
@@ -149,7 +149,7 @@ const result = await convert(text, {
 
 ## CLI Reference
 
-### `mdexport convert <input>`
+### `convatile convert <input>`
 
 Convert text or a file to specified formats.
 
@@ -165,11 +165,11 @@ Convert text or a file to specified formats.
 - `--author <author>`: Document author
 - `--stdin`: Read input from stdin
 
-### `mdexport templates list`
+### `convatile templates list`
 
 List all registered templates.
 
-### `mdexport templates add <path>`
+### `convatile templates add <path>`
 
 Register a new template.
 
@@ -215,7 +215,7 @@ import {
   TemplateError,
   FormatError,
   ValidationError
-} from 'markdown-export-sdk';
+} from 'convatile-sdk';
 
 try {
   await convert(text, { format: ['pdf'] });

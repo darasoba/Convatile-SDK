@@ -17,7 +17,7 @@ import {
 const program = new Command();
 
 program
-  .name('mdexport')
+  .name('convatile')
   .description('Convert documents between formats (MD, PDF, DOCX, HTML)')
   .version('1.0.0');
 

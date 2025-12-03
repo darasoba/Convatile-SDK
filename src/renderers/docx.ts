@@ -35,7 +35,7 @@ export async function renderDocx(ast: Root, options: RenderOptions = {}): Promis
     const sections = renderAstToDocx(ast, options.metadata);
 
     const doc = new Document({
-      creator: options.metadata?.author || 'Markdown Export SDK',
+      creator: options.metadata?.author || 'Convatile-SDK',
       title: options.metadata?.title || 'Document',
       description: options.metadata?.description || '',
       keywords: options.metadata?.keywords?.join(', ') || '',

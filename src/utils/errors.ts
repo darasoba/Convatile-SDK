@@ -1,13 +1,13 @@
 /**
- * Base error class for the Markdown Export SDK
+ * Base error class for the Convatile-SDK
  */
-export class MarkdownExportError extends Error {
+export class ConvatileError extends Error {
   public readonly code: string;
   public readonly cause?: Error;
 
   constructor(message: string, code: string, cause?: Error) {
     super(message);
-    this.name = 'MarkdownExportError';
+    this.name = 'ConvatileError';
     this.code = code;
     this.cause = cause;
     Object.setPrototypeOf(this, new.target.prototype);
@@ -17,7 +17,7 @@ export class MarkdownExportError extends Error {
 /**
  * Error thrown during document conversion
  */
-export class ConversionError extends MarkdownExportError {
+export class ConversionError extends ConvatileError {
   public readonly format: string;
 
   constructor(message: string, format: string, cause?: Error) {
@@ -30,7 +30,7 @@ export class ConversionError extends MarkdownExportError {
 /**
  * Error thrown during parsing
  */
-export class ParseError extends MarkdownExportError {
+export class ParseError extends ConvatileError {
   public readonly position?: { line: number; column: number };
 
   constructor(message: string, position?: { line: number; column: number }, cause?: Error) {
@@ -43,7 +43,7 @@ export class ParseError extends MarkdownExportError {
 /**
  * Error thrown when a template is not found or invalid
  */
-export class TemplateError extends MarkdownExportError {
+export class TemplateError extends ConvatileError {
   public readonly templateId?: string;
 
   constructor(message: string, templateId?: string, cause?: Error) {
@@ -56,7 +56,7 @@ export class TemplateError extends MarkdownExportError {
 /**
  * Error thrown when an invalid format is specified
  */
-export class FormatError extends MarkdownExportError {
+export class FormatError extends ConvatileError {
   public readonly invalidFormat: string;
 
   constructor(invalidFormat: string) {
@@ -69,7 +69,7 @@ export class FormatError extends MarkdownExportError {
 /**
  * Error thrown for validation failures
  */
-export class ValidationError extends MarkdownExportError {
+export class ValidationError extends ConvatileError {
   public readonly field?: string;
 
   constructor(message: string, field?: string) {

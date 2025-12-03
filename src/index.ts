@@ -67,7 +67,7 @@ export type {
 
 // Errors
 export {
-  MarkdownExportError,
+  ConvatileError,
   ConversionError,
   ParseError,
   TemplateError,

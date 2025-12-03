@@ -4,7 +4,7 @@ import { convert } from '../../src/index.js';
 describe('Integration: convert', () => {
   const sampleMarkdown = `# Sample Document
 
-This is a sample document for testing the Markdown Export SDK.
+This is a sample document for testing the Convatile-SDK.
 
 ## Features
 
@@ -16,7 +16,7 @@ This is a sample document for testing the Markdown Export SDK.
 ## Code Example
 
 \`\`\`javascript
-const { convert } = require('markdown-export-sdk');
+const { convert } = require('convatile-sdk');
 
 const result = await convert(text, {
   format: ['pdf', 'docx']
